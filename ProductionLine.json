@@ -1,0 +1,17 @@
+{
+	"ProductionLines":[
+		{
+			"CODE":"001",
+			"SHORT_TEXT":"Linia 1"
+		},
+		{
+			"CODE":"002",
+			"SHORT_TEXT":"Linia 2"
+		},
+		{
+			"CODE":"003",
+			"SHORT_TEXT":"Linia 3"
+		}
+	]
+	
+}

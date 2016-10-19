@@ -1,0 +1,101 @@
+{
+	"ROOT":{
+		"SUCCESS":"",
+		"MSG":"",
+		"OBJ_COLLECTION_TITLE":"",
+		"OBJ_COLLECTION":[
+			{
+				"HEADER":{
+					"PLANNEDORDER_NUM":"000004000200",
+					"MATERIAL":"123",
+					"SHORT_TEXT":"Seifabricat 1",
+					"PRODUCTION_LINE":"Linia 1",
+					"TOTAL_PLORD_QTY":100,
+					"YELD":0
+				},
+				"COMPONENTS":[
+					{
+						"MATERIAL":"201",
+						"MATL_DESC":"Materie Prima 1",
+						"PLANT":"1010",
+						"STGE_LOC":"",
+						"REQ_QUAN":120,
+						"CONF_QUAN":0,
+						"CHARG":""
+					},
+										{
+						"MATERIAL":"202",
+						"MATL_DESC":"Materie Prima 2",
+						"PLANT":"1010",
+						"STGE_LOC":"",
+						"REQ_QUAN":5,
+						"CONF_QUAN":0,
+						"CHARG":""
+					}
+				]
+			},
+			
+			{
+				"HEADER":{
+					"PLANNEDORDER_NUM":"000004000205",
+					"MATERIAL":"126",
+					"SHORT_TEXT":"Seifabricat 2",
+					"PRODUCTION_LINE":"Linia 1",
+					"TOTAL_PLORD_QTY":100,
+					"YELD":0
+				},
+				"COMPONENTS":[
+					{
+						"MATERIAL":"201",
+						"MATL_DESC":"Materie Prima 1",
+						"PLANT":"1010",
+						"STGE_LOC":"",
+						"REQ_QUAN":5,
+						"CONF_QUAN":0,
+						"CHARG":""
+					}
+				]
+			},
+			
+			{
+				"HEADER":{
+					"PLANNEDORDER_NUM":"000004000201",
+					"MATERIAL":"124",
+					"SHORT_TEXT":"Seifabricat 3",
+					"PRODUCTION_LINE":"Linia 2",
+					"TOTAL_PLORD_QTY":100,
+					"YELD":0
+				},
+				"COMPONENTS":[
+					{
+						"MATERIAL":"201",
+						"MATL_DESC":"Materie Prima 1",
+						"PLANT":"1010",
+						"STGE_LOC":55,
+						"REQ_QUAN":5,
+						"CONF_QUAN":0,
+						"CHARG":""
+					},
+					{
+						"MATERIAL":"203",
+						"MATL_DESC":"Materie Prima 3",
+						"PLANT":"1010",
+						"STGE_LOC":55,
+						"REQ_QUAN":5,
+						"CONF_QUAN":0,
+						"CHARG":""
+					},
+					{
+						"MATERIAL":"202",
+						"MATL_DESC":"Materie Prima 2",
+						"PLANT":"1010",
+						"STGE_LOC":55,
+						"REQ_QUAN":45,
+						"CONF_QUAN":0,
+						"CHARG":""
+					}
+				]
+			}
+		]
+	}
+}

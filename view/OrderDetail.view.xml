@@ -1,0 +1,111 @@
+<mvc:View controllerName="sap.ui.pp.mobi.controller.OrderDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core" displayBlock="true">
+	<Page id="pageOrderDetail" showNavButton="true" navButtonPress="onNavBack" title="{i18n>orderPageTitle}">
+		<ObjectHeader title="{HEADER/SHORT_TEXT}" number="{HEADER/PLANNEDORDER_NUM}" responsive="true" fullScreenOptimized="true" showMarkers="true"
+			markFavorite="{StateStart}" markFlagged="{StateWork}">
+			<attributes>
+				<ObjectAttribute title="Linia de productie" text="{HEADER/PRODUCTION_LINE}"/>
+				<ObjectAttribute title="Produs" text="{HEADER/MATERIAL}"/>
+				<ObjectAttribute title="Cantitate planificata" text="{HEADER/TOTAL_PLORD_QTY}"/>
+			</attributes>
+		</ObjectHeader>
+		<!--
+		<Panel class="sapUiResponsiveMargin" width="auto" headerText="Confirmare">
+		
+			<content>
+				<Label text="Cantitate Produsa"/>
+				<Input type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+			</content>
+			
+		</Panel>
+		-->
+		<VBox class="sapUiSmallMargin">
+			<f:Form id="FormChange354" minWidth="1024" maxContainerCols="2" editable="true">
+				<f:title>
+					<core:Title text="Confirmare"/>
+				</f:title>
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Cantitate Produsa">
+								<f:fields>
+									<Input type="Number" liveChange="handleChangeYeld" valueLiveUpdate="True" value="{HEADER/YELD}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>
+		<Panel class="sapUiResponsiveMargin" width="auto" headerText="Materiale" expandable="false" expanded="true">
+			<content>
+				<Table id="componentsList" width="auto" items="{COMPONENTS}" growing="true" growingThreshold="10" growingScrollToLoad="true"
+					busyIndicatorDelay="0">
+					<!--
+					<headerToolbar>
+						<Toolbar>
+							<Input id="dummy" value="{dummy}" type="hidden" enabled="false"/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://add" id="btnAddItem" press="handleAddItem" text="Pozitie noua"/>
+						</Toolbar>
+					</headerToolbar>
+					-->
+					<columns>
+						<Column>
+							<Text text="Material"/>
+						</Column>
+												<Column>
+							<Text text="Cantitate Planificata"/>
+						</Column>
+						<Column>
+							<Text text="Lot"/>
+						</Column>
+
+						<Column>
+							<Text text="Cantitate Utilizata"/>
+						</Column>
+					 
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{MATL_DESC}" text="{MATERIAL}"/>
+								
+								<ObjectNumber	number="{REQ_QUAN}"		 />
+								 
+							  
+							  	<Input id="productInputLot" value="{CHARG}" enabled="true" editable="true" showValueHelp="true" valueHelpOnly="true"
+									valueHelpRequest="handleValueRequestCharg"/>
+							  		
+							
+								 
+								<HBox>
+									<Input  value="{CONF_QUAN}"  valueLiveUpdate="True"  liveChange="handleChangeConfQty" type="Number" style="text-align: right;"/>
+									<Button enabled="{split}" icon="sap-icon://duplicate" id="btnSplitItem" press="handleSplitItem"/>	
+								</HBox>
+								
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Panel>
+		<footer>
+			<Bar>
+				<contentLeft>
+					 
+				</contentLeft>
+				<contentRight>
+					<Button id="buttonSave" icon="sap-icon://save" press="onPressSave" visible="{ForUpdate}" type="Accept" text="Sincronizare SAP"></Button>
+					<Button id="buttonMessages" icon="sap-icon://alert" press="messagePopoverOpen" visible="{StateEnd}" text="{controls>/buttonMessagesText}"
+						type="{controls>/buttonMessagesType}"></Button>
+					<Button id="start_work" type="Emphasized" icon="sap-icon://play" text="Start Lucru" press="onPressStartWork" visible="{StateStart}"/>
+					<Button id="stop_work" type="Emphasized" icon="sap-icon://task" text="Stop Lucru" press="onPressStopWork" visible="{StateWork}"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
